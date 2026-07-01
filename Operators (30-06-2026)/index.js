@@ -99,7 +99,6 @@ console.log(decision1 != decision3);
 
 let bit1 = 5; //0101
 let bit2 = 2; //0010
-                0111  
                           
 console.log(bit1 & bit2);
 console.log(bit1 | bit2);
