@@ -216,5 +216,21 @@ console.log("====Destructuring Assignment operators====")
     console.log(city);
 }
 
+// 13. Optional chaining operators (? .)
+
+let student ={
+    name : 'priya',
+    age : 23,
+    address:{
+        city:"surat"
+    }
+}
+
+console.log(student?.name);
+console.log(student?.address.city);
+console.log(student?.address.city);
+
+
+
 
 

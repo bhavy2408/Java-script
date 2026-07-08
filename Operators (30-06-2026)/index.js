@@ -103,3 +103,6 @@ let bit2 = 2; //0010
 console.log(bit1 & bit2);
 console.log(bit1 | bit2);
 console.log(bit1 ^ bit2);
+
+// 14. Optional chaining opreators
+
