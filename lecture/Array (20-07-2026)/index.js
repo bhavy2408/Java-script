@@ -164,11 +164,10 @@
 
 // 7.includes()
 {
-    let string = ["apple" , "orange" , "Banana"];
-    console.log(string.includes("graps"));   
+    let aray = ["apple", "orange", "Banana"];
+    console.log(array.includes("graps"));
 
-    let num = [10 , 20 , 30]
-    console.log(num.includes(20 , 1));
+    let num = [10, 20, 30]
+    console.log(num.includes(20, 1));
 }
 
-// 8.indexOf()
