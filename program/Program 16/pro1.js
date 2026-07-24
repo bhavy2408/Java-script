@@ -1,0 +1,1 @@
+// Type Conversion (String to Number): Declare two numeric strings (e.g., "10" and "25"), convert them to actual numbers, add them together, and print the result to demonstrate proper conversion vs. concatenation. 
