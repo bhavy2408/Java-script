@@ -174,7 +174,7 @@ fahrenheit = (celsius * 9 / 5) + 32;
 alert(fahrenheit);
 
 
-// Proj :- 13
+// Proj :- 11
 //  Discount Calculation: Calculate the final selling price of a product by declaring its original price and applying a 15% discount. 
 
 var product1 = 6000
