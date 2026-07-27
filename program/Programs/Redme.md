@@ -1,47 +1,75 @@
-# JavaScript Practice Programs
+# 🚀 JavaScript Basic Programs
 
-This repository contains basic JavaScript programs created for learning programming fundamentals. The programs cover variables, data types, operators, conditional statements, arithmetic calculations, and simple logic-building exercises.
+A collection of beginner-friendly JavaScript programs that demonstrate the fundamentals of JavaScript programming. This project is designed for students to practice basic concepts through simple examples.
 
-## 📂 Project Files
+---
 
-- `index.html` – Main HTML file that runs the JavaScript programs.
-- `pro1.js` – Contains multiple JavaScript practice programs.
+## 📂 Project Structure
 
-## 📋 Programs Included
+```
+JavaScript-Basic-Programs/
+│── index.html
+│── Programs.js
+│── README.md
+```
 
-1. Welcome Message (Console, Alert, Document Write, InnerHTML)
-2. Data Type Declaration
-3. ES5 (`var`) vs ES6 (`let`, `const`) Scope
-4. Const Object Mutation
-5. Swapping Two Variables (Using Temporary Variable)
-6. Swapping Two Variables (Without Temporary Variable)
-7. Basic Calculator
+---
+
+## 📁 Files
+
+- 📄 **index.html** – Main HTML file
+- 📜 **Programs.js** – Contains all JavaScript programs
+- 📘 **README.md** – Project documentation
+
+---
+
+## ✨ Features
+
+- ✅ 20 Beginner JavaScript Programs
+- ✅ Simple and Easy to Understand
+- ✅ Console Output Examples
+- ✅ Arithmetic & Logical Operations
+- ✅ Variable and Data Type Practice
+- ✅ Real-World Calculation Examples
+- ✅ Perfect for Beginners
+
+---
+
+## 📚 Programs Included
+
+1. Welcome Message
+2. Data Types
+3. ES5 (`var`) vs ES6 (`let`, `const`)
+4. Const Mutation
+5. Swap Numbers (Using Temp Variable)
+6. Swap Numbers (Without Temp Variable)
+7. Calculator
 8. Area of Circle
-9. Simple Interest Calculator
-10. Temperature Converter (Celsius to Fahrenheit)
-11. Restaurant Bill Calculator
+9. Simple Interest
+10. Temperature Converter
+11. Restaurant Bill
 12. Discount Calculation
-13. Employee Salary (Gross Salary)
-14. Employee Salary with PF Deduction
-15. Days to Years, Months, and Days Converter
+13. Employee Gross Salary
+14. Employee Net Salary
+15. Days Converter
 16. String to Number Conversion
-17. Even or Odd Checker
+17. Even/Odd Checker
 18. Maximum of Two Numbers
-19. Leap Year Checker
+19. Maximum of Two Numbers (Ternary)
+20. Leap Year Checker
+
+---
 
 ## 🛠️ Technologies Used
 
 - HTML5
 - JavaScript (ES6)
 
-## 🚀 How to Run
+---
 
-1. Download or clone this repository.
-2. Open the project folder.
-3. Open `index.html` in any modern web browser.
-4. Open the browser's Developer Console (`F12` → Console) to view the program outputs.
+## 🎯 Learning Objectives
 
-## 📚 Learning Concepts
+By completing these programs, you will learn:
 
 - Variables (`var`, `let`, `const`)
 - Data Types
@@ -52,25 +80,69 @@ This repository contains basic JavaScript programs created for learning programm
 - Type Conversion
 - Conditional Statements
 - Console Output
-- Alert
-- Document Write
-- DOM Manipulation
+- DOM Basics
 
-## ⚠️ Notes
+---
 
-- Some programs use `alert()`, `document.write()`, and `console.log()`.
-- A few variable names are reused (such as `A`, `B`, `salary`, etc.). If all programs are executed in the same file, redeclaration errors may occur. Consider placing each program in its own function or separate file for better organization.
-- In `index.html`, the JavaScript file should be included using:
+## 📊 Sample Outputs
 
-```html
-<script src="pro1.js"></script>
+```text
+Program 7:
+Addition = 15
+Subtraction = 5
+Multiplication = 50
+Division = 2
+Modulus = 0
+
+Program 8:
+Area of Circle = 78.5
+
+Program 9:
+Simple Interest = 1800
+
+Program 10:
+77
+
+Program 11:
+Subtotal = 1100
+GST = 55
+Final Bill = 1155
+
+Program 16:
+Without Conversion: 1025
+After Conversion: 35
+
+Program 17:
+True
+
+Program 18:
+Maximum Number :- 90
+
+Program 20:
+false
 ```
 
-instead of:
+---
 
-```html
-<script url="./pro1.js"></script>
-```
+## ▶️ How to Run
+
+1. Clone or download this repository.
+2. Open the project folder.
+3. Open **index.html** in any web browser.
+4. Press **F12 → Console** to view the outputs.
+
+---
+
+## 🎥 Explanation Videos
+Link :- https://drive.google.com/file/d/1141zrtHO6MA0xIz-60HgDhYFxg9d1Psi/view?usp=sharing 
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Feel free to fork this repository, improve the code, and submit a pull request.
+
+---
 
 ## 👨‍💻 Author
 
@@ -78,4 +150,4 @@ instead of:
 
 ---
 
-This project is created for practicing JavaScript fundamentals and improving programming skills.
+⭐ If you found this project helpful, please consider giving it a **Star** on GitHub!
