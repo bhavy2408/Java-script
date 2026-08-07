@@ -1,28 +1,23 @@
-let slideIndex = 1;
-showSlides(slideIndex);
+let imgdata = [
+  "https://images.pexels.com/photos/38561256/pexels-photo-38561256.jpeg",
+  "https://images.pexels.com/photos/28300438/pexels-photo-28300438.jpeg",
+  "https://images.pexels.com/photos/33954000/pexels-photo-33954000.jpeg",
+  "https://images.pexels.com/photos/33685536/pexels-photo-33685536.jpeg",
+]
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+let index = 0
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+let slider = document.getElementById("slider");
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+slider.src = slider[index];
+
+function next(){
+  index++;
+
+  if(index >= imgdata.length){
+      index = 0;
   }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  
+  slider.src = imgdata[index];
 }
+
