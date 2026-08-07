@@ -1,0 +1,53 @@
+
+
+#slider-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+
+#slider {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.3s ease;
+  user-select: none;
+}
+button:hover {
+  background: rgba(0,0,0,0.7);
+}
+button:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+
+button:first-of-type {
+  left: 10px;
+}
+button:last-of-type {
+  right: 10px;
+}
+
+
+

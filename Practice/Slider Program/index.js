@@ -21,3 +21,14 @@ function next(){
   slider.src = imgdata[index];
 }
 
+function prev(){
+  index--;
+
+  if(index < 0){
+      index = imgdata.length - 1;
+  }
+  
+  slider.src = imgdata[index];
+}   
+  
+ 
