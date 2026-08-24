@@ -44,7 +44,8 @@ const result = document.getElementById("result");
 
 // Function:-
 
-function showquestion() {
+function show
+ question() {
     Questions.innerHTML = questions[currentquestion].question;
 
     option[0].textContent = questions[currentquestion].options[0];
@@ -85,8 +86,13 @@ next_btn.addEventListener("click" , function(){
     currentquestion++;
     showquestion();
 
-    displayscore.textContent = "Score: " + Score + " / " + questions.length;
-})
+if (currentquestion < questions.length) {
+    showquestion();
+  } else {
+    Qpage.style.display = "none";
+    result.style.display = "flex";
 
-
-
+    displayscore.textContent =
+      "Your Score: " + Score + " / " + questions.length;
+  }
+});
