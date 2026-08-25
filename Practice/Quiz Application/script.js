@@ -40,12 +40,13 @@ const Questions = document.getElementById("Questiontext");
 const option = document.querySelectorAll(".option");
 const next_btn = document.getElementById("next_btn");
 const displayscore = document.getElementById("score");
-const result = document.getElementById("result");
+const resultpage = document.getElementById("resultpage"); 
+const score = document.getElementById("score");
+const Qpage = document.getElementById("Qpage"); 
 
 // Function:-
 
-function show
- question() {
+function showquestion() {
     Questions.innerHTML = questions[currentquestion].question;
 
     option[0].textContent = questions[currentquestion].options[0];
@@ -84,15 +85,15 @@ option.forEach(function (button) {
 // Next Button click 
 next_btn.addEventListener("click" , function(){
     currentquestion++;
-    showquestion();
+
 
 if (currentquestion < questions.length) {
     showquestion();
   } else {
     Qpage.style.display = "none";
-    result.style.display = "flex";
+    resultpage.style.display = "flex";
 
-    displayscore.textContent =
+    score.textContent =
       "Your Score: " + Score + " / " + questions.length;
   }
 });
