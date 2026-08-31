@@ -1,7 +1,6 @@
 const questions = [
   {
-    question:
-      "1. Which method is used to add an element at the end of an array?",
+    question: "1. Which method is used to add an element at the end of an array?",
     options: ["pop()", "push()", "shift()", "unshift()"],
     answer: "push()",
   },
@@ -16,8 +15,7 @@ const questions = [
     answer: "0",
   },
   {
-    question:
-      "4. Which property is used to find the number of elements in an array?",
+    question: "4. Which property is used to find the number of elements in an array?",
     options: ["size", "count", "length", "total"],
     answer: "length",
   },
@@ -30,70 +28,134 @@ const questions = [
 ];
 
 let currentquestion = 0;
-let Score = 0; 
+let Score = 0;
+let answered = false;
 
-// Elements:
-
+// Elements
 const screenpage = document.getElementById("screenpage");
 const Start_btn = document.getElementById("Start_btn");
 const Questions = document.getElementById("Questiontext");
 const option = document.querySelectorAll(".option");
 const next_btn = document.getElementById("next_btn");
 const displayscore = document.getElementById("score");
-const resultpage = document.getElementById("resultpage"); 
-const score = document.getElementById("score");
-const Qpage = document.getElementById("Qpage"); 
+const Qpage = document.getElementById("Qpage");
+const result = document.getElementById("Quizbox");
+const percentage = document.getElementById("percentage");
+const resetQuiz = document.getElementById("resetQuiz");
 
-// Function:-
-
+// Show Question
 function showquestion() {
-    Questions.innerHTML = questions[currentquestion].question;
 
-    option[0].textContent = questions[currentquestion].options[0];
-    option[1].textContent = questions[currentquestion].options[1];
-    option[2].textContent = questions[currentquestion].options[2];
-    option[3].textContent = questions[currentquestion].options[3];
+  Questions.textContent = questions[currentquestion].question;
+
+  option.forEach(function (button, index) {
+    button.textContent = questions[currentquestion].options[index];
+
+    // Remove previous classes
+    button.classList.remove("correct");
+    button.classList.remove("wrong");
+
+    // Enable buttons
+    button.disabled = false;
+  });
+
+  answered = false;
 }
 
+// Start Quiz
 Start_btn.addEventListener("click", function () {
+
   screenpage.style.display = "none";
   Qpage.style.display = "flex";
+  result.style.display = "none";
 
   showquestion();
-
-  
 });
 
-// Select The Option
-
+// Select Option
 option.forEach(function (button) {
+
   button.addEventListener("click", function () {
-    let selectedAnswer = button.textContent;
 
-    console.log(selectedAnswer);
-
-    if (selectedAnswer === questions[currentquestion].answer) {
-      console.log("Correct Answer !");
-      Score++;
-    } else {
-      console.log("InCorrect Answer !");
+    // Prevent selecting multiple answers
+    if (answered) {
+      return;
     }
+
+    answered = true;
+
+    let selectedAnswer = button.textContent;
+    let correctAnswer = questions[currentquestion].answer;
+
+    if (selectedAnswer === correctAnswer) {
+
+      // Correct answer
+      button.classList.add("correct");
+
+      Score++;
+
+    } else {
+
+      // Wrong answer
+      button.classList.add("wrong");
+
+      // Show correct answer
+      option.forEach(function (btn) {
+
+        if (btn.textContent === correctAnswer) {
+          btn.classList.add("correct");
+        }
+
+      });
+    }
+
+    // Disable all options
+    option.forEach(function (btn) {
+      btn.disabled = true;
+    });
 
   });
 });
 
-// Next Button click 
-next_btn.addEventListener("click" , function(){
-    currentquestion++;
+// Next Button
+next_btn.addEventListener("click", function () {
 
-
-if (currentquestion < questions.length) {
-    showquestion();
-  } else {
-    Qpage.style.display = "none";
-    resultpage.style.display = "flex";
-
-    score.textContent =
-      "Your Score: " + Score + " / " + questions.length;
+  if (!answered) {
+    alert("Please select an answer!");
+    return;
   }
+
+  currentquestion++;
+
+  if (currentquestion < questions.length) {
+
+    showquestion();
+
+  } else {
+
+    Qpage.style.display = "none";
+    result.style.display = "flex";
+
+    displayscore.textContent =
+      "Your Score: " + Score + " / " + questions.length;
+
+    let finalPercentage =
+      (Score / questions.length) * 100;
+
+    percentage.textContent =
+      "Percentage: " + finalPercentage.toFixed(2) + "%";
+  }
+});
+
+// Reset Quiz
+resetQuiz.addEventListener("click", function () {
+
+  currentquestion = 0;
+  Score = 0;
+  answered = false;
+
+  result.style.display = "none";
+  Qpage.style.display = "none";
+  screenpage.style.display = "flex";
+
 });

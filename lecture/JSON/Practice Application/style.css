@@ -1,4 +1,4 @@
-* {
+/* * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -112,4 +112,168 @@ th , td{
 th{
   background: #333;
   color:white;
+}
+
+#output{
+  margin-top: 50px;
+  max-width: 1000px;
+  background: darkgrey;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #ccc;
+} */
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+    background-color: brown;
+    min-height: 100vh;
+    padding: 30px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #ccc;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(240, 64, 64);
+}
+
+.input {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.input input {
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 3px solid rgb(210, 60, 26);
+    outline: none;
+}
+
+.btn {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn button,
+#updt {
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+}
+
+#save {
+    background-color: green;
+}
+
+#View {
+    background-color: blue;
+}
+
+#delete {
+    background-color: red;
+}
+
+#clear {
+    background-color: black;
+}
+
+#updt {
+    margin-top: 20px;
+    background-color: orange;
+}
+
+.btn button:hover,
+#updt:hover {
+    opacity: 0.8;
+}
+
+#output {
+    margin-top: 50px;
+    background: darkgrey;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #ccc;
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+th,
+td {
+    border: 1px solid gray;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #333;
+    color: white;
+}
+
+.edit-btn {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .input {
+        flex-direction: column;
+    }
+
+    .btn {
+        flex-direction: column;
+    }
+
+    .btn button,
+    #updt {
+        width: 100%;
+    }
 }

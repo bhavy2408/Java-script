@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -19,24 +19,79 @@
         </div>
 
         <div class="btn">
-            <button id="save">Save</button>
-            <button id="View">view</button>
+            <button id="save" onclick="SaveData()">Save</button>
+            <button id="View" onclick="ViewData()">view</button>
             <button id="delete">Delete</button>
-            <button id="clear">Clear</button>
+            <button id="clear" onclick="clearAll()">Clear</button>
         </div>
 
         <button id="updt">update</button>
 
-        <table class="table">
-            <tr >
-                <th>Roll No</th>
-                <th>Name</th>
-                <th>Age</th>
-            </tr>
-        </table>
+        
 
-        <output></output>
+        <div id="output">No data available!.</div>
     </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Data</title>
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Student Data</h1>
+
+        <div class="input">
+
+            <input type="number" id="rollno" placeholder="Enter Roll No">
+
+            <input type="text" id="name" placeholder="Enter Name">
+
+            <input type="number" id="age" placeholder="Enter Age">
+
+        </div>
+
+
+        <div class="btn">
+
+            <button id="save" onclick="SaveData()">Save</button>
+
+            <button id="View" onclick="ViewData()">View</button>
+
+            <button id="delete" onclick="DeleteData()">Delete</button>
+
+            <button id="clear" onclick="ClearData()">Clear</button>
+
+        </div>
+
+
+        <button id="updt" onclick="UpdateData()">Update</button>
+
+
+        <div id="output">
+            No data available!.
+        </div>
+
+    </div>
+
+
+    <script src="./script.js"></script>
+
 </body>
 
 </html>

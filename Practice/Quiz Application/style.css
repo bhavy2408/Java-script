@@ -1,4 +1,4 @@
-* {
+ * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -35,14 +35,14 @@
 
 /* Question Page */
 
-#Qpage {
+ #Qpage {
   width: 100%;
   height: 800px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: rgb(4, 95, 22);
-  display: none;
+  /* display: none; */
 }
 
 #Qtable {
@@ -105,33 +105,91 @@
   cursor: pointer;
 }
 
-#score {
-    font-size: 20px;
+#Quizbox {
+    height: 740px;
+    width: 100%;
+    border: 1px solid black;
+    background-color: rgb(34, 171, 116);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#result {
+    width: 750px;
+    min-height: 450px;
+    border: 1px solid black;
+    border-radius: 20px;
+
+    background-color: rgb(4, 95, 22);
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#result p {
+    font-size: 40px;
     font-weight: bold;
-    text-align: center;
-    margin-top: 5px;
+    margin: 0;
 }
 
-#resultpage{
-  width: 100%;
-  height: 800px;
-  display:inline-block;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(4, 95, 22);
-  display: none;
+#result span {
+    font-size: 28px;
+    font-weight: 500;
 }
 
-#resultpage p{
-  font-size: 30px;
-  color: white;
-  text-align: center;
-  margin-top: 10px;
+#resetQuiz {
+    margin-top: 20px;
+    padding: 12px 30px;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 8px;
+
+    background-color: white;
+    color: rgb(4, 95, 22);
+
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-#resultpage span{
-  font-size: 20px;
-  color: white;
-  text-align: center;
-  margin-top: 5px;
+#resetQuiz:hover {
+    background-color: rgb(34, 171, 116);
+    color: white;
+    transform: scale(1.05);
+}
+
+
+.option {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Correct Answer */
+.option.correct {
+    background-color: #22c55e !important;
+    color: white;
+    border: 2px solid #15803d;
+}
+
+/* Wrong Answer */
+.option.wrong {
+    background-color: #ef4444 !important;
+    color: white;
+    border: 2px solid #b91c1c;
+}
+
+/* Disabled options */
+.option:disabled {
+    cursor: not-allowed;
+    opacity: 1;
 }
