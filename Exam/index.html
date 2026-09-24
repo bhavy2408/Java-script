@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Task Manager</title>
+
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <h1>Task Manager</h1>
+
+        <form id="taskForm">
+
+            <input
+                type="text"
+                id="title"
+                placeholder="Task Title"
+            >
+
+
+            <textarea
+                id="description"
+                placeholder="Task Description"
+            ></textarea>
+
+
+            <input
+                type="date"
+                id="dueDate"
+            >
+
+
+            <select id="priority">
+
+                <option value="Low">
+                    Low
+                </option>
+
+                <option value="Medium">
+                    Medium
+                </option>
+
+                <option value="High">
+                    High
+                </option>
+
+            </select>
+
+
+            <button
+                type="submit"
+                id="submitBtn"
+            >
+                Add Task
+            </button>
+
+        </form>
+
+
+        <!-- Error Message -->
+
+        <p id="error"></p>
+
+
+        <!-- Search and Filter -->
+
+        <div class="controls">
+
+            <input
+                type="text"
+                id="search"
+                placeholder="Search task..."
+            >
+
+
+            <select id="filter">
+
+                <!-- IMPORTANT: ALL must match JavaScript -->
+
+                <option value="ALL">
+                    All Priority
+                </option>
+
+                <option value="Low">
+                    Low
+                </option>
+
+                <option value="Medium">
+                    Medium
+                </option>
+
+                <option value="High">
+                    High
+                </option>
+
+            </select>
+
+        </div>
+
+        <div id="taskList"></div>
+
+    </div>
+
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
+

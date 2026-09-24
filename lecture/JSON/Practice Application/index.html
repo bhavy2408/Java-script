@@ -1,39 +1,82 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Student Data</title>
+
+      <style>
+        table {
+            border-collapse: collapse;
+            width: 700px;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: lightgray;
+        }
+
+        input {
+            padding: 8px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 8px 15px;
+            margin: 5px;
+        }
+
+
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <h1>Student Data</h1>
 
-        <div class="input">
-            <input type="number" name="" id="rollno" placeholder="Enter Rollno">
-            <input type="text" name="" id="name" placeholder="Enter Name">
-            <input type="number" name="" id="age" placeholder="Enter Age">
-        </div>
 
-        <div class="btn">
-            <button id="save" onclick="SaveData()">Save</button>
-            <button id="View" onclick="ViewData()">view</button>
-            <button id="delete">Delete</button>
-            <button id="clear" onclick="clearAll()">Clear</button>
-        </div>
 
-        <button id="updt">update</button>
+    
+    <h1>Student Information</h1>
 
-        
+    <input type="text" id="name" placeholder="Enter Name">
 
-        <div id="output">No data available!.</div>
-    </div>
+    <input type="number" id="age" placeholder="Enter Age">
+
+    <input type="text" id="course" placeholder="Enter Course">
+
+    <input type="text" id="city" placeholder="Enter City">
+
+    <button id="save">Save</button>
+
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Course</th>
+                <th>City</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody id="studentTable">
+
+        </tbody>
+
+    </table>
+
 
     <script src="./script.js"></script>
 </body>
 
 </html>
-

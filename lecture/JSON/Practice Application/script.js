@@ -1,76 +1,55 @@
-// Save data
+// DOM
 
-let SaveData = () => {
-  let rollno = document.getElementById("rollno").value;
-  let name = document.getElementById("name").value;
-  let age = document.getElementById("age").value;
+// Get input elements
+let nameInput = document.getElementById("name");
+let ageInput = document.getElementById("age");
+let courseInput = document.getElementById("course");
+let cityInput = document.getElementById("city");
 
-  if (rollno === "" || name === "" || age === "") {
-    alert("Please Enter All details !.");
-    return;
-  }
+// Get buttons
+let saveBtn = document.getElementById("save");
+let studentTable = document.getElementById("studentTable"); 
+let showBtn = document.getElementById("show");
+
+// Get output element
+let output = document.getElementById("output");         
+
+let savedata = () => {
+  let name = nameInput.value;
+  let age = ageInput.value;
+  let course = courseInput.value;
+  let city = cityInput.value;
 
   let student = {
-    rollno: Number(rollno),
     name: name,
-    age: Number(age),
+    age: age,
+    course: course,
+    city: city,
   };
 
-  let students = JSON.parse(localStorage.getItem("student")) || [];
+  // json
+  let studentjson = JSON.stringify(student);
 
-  students.push(student);
+  // setdata
+  localStorage.setItem("student", studentjson);
 
-  localStorage.setItem("student", JSON.stringify(students));
-
-  alert("Details Save Successfully!.");
+  alert("Data successfully Saved!");
 };
 
+let showData = () => {
+  let studentjson = localStorage.getItem("studen t");
+  let student = JSON.parse(studentjson);
 
-// View data
+  // display data
+  output.innerHTML = `
+                Name: ${student.name} <br>
+                Age: ${student.age} <br>
+                Course: ${student.course} <br>
+                City: ${student.city}
+            `;
 
-let ViewData = () => {
+};
 
-  let Data = localStorage.getItem("student");
-
-  if (Data === null) {
-    document.getElementById("output").innerHTML = "No data available!..";
-    return;
-  }
-
-  let students = JSON.parse(Data);
-
-  let html = `
-    <table class="table">
-      <tr>
-        <th>Roll No</th>
-        <th>Name</th>
-        <th>Age</th>
-      </tr>
-  `;
-
-  students.forEach((std) => {
-    html += `
-      <tr>
-        <td>${std.rollno}</td>
-        <td>${std.name}</td>
-        <td>${std.age}</td>
-      </tr>
-    `;
-  });
-
-  html += "</table>";
-
-  document.getElementById("output").innerHTML = html;
-};  
-
-const clearAll = () => {
-  let confirmDelete = confirm("Are you sure you want to delete all data?.")
-
-  if(confirmDelete){
-    localStorage.removeItem("students")
-    alert("All student data deleted!.")
-    document.getElementById("output").innerHTML = "No Data available."
-  }
-}
-
+saveBtn.addEventListener("click", savedata);
+showBtn.addEventListener("click", showData);
 

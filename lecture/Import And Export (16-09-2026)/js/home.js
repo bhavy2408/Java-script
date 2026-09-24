@@ -1,5 +1,6 @@
-import{getproducts , saveProduct , getCarts ,saveCarts} from "./help.js"
-import{ seedproducts } from "./product.js"
+import{getproducts , saveProduct } from "./help.js"
+
+
 document.addEventListener("DOMContentLoaded", () => {
   document
     .getElementById("productForm")
@@ -66,7 +67,7 @@ let renderProduct = (list) => {
     return;
   }
 
-  list.array.forEach((product) => {
+  list.forEach((product) => {
     const card = document.createElement("div");
 
     card.innerHTML = `
@@ -104,13 +105,13 @@ let renderProduct = (list) => {
 
 let FilterAndSort = () => {
 
- let keyword = document.getElementById("searchInput").value.trim().tolowercase();
- let sortselect = document.getElementById("sortSelect");
+ let keyword = document.getElementById("searchInput").value.trim().toLowerCase();
+ let sortselect = document.getElementById("sortSelect").value;
 
   let products = getproducts(); 
 
- if(keyword !== 0){
-  products = products.filter((p) => p.name.tolowercase().includes(keyword));
+ if(keyword !== ""){
+  products = products.filter((p) => p.name.toLowerCase().includes(keyword));
  }
 
   if(sortselect === "lowtohigh"){
@@ -121,3 +122,4 @@ let FilterAndSort = () => {
  
   renderProduct(products);
 } 
+
